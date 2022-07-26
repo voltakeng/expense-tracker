@@ -9,10 +9,10 @@ const budgetsSlice = createSlice({
   reducers: {
     editBudget: (state, action) => {
       const newBudgets = state.map(budge => {
-        if(budget.category === action.payload.category) {
+        if(budge.category === action.payload.category) {
           return action.payload; 
         }
-        return budget; 
+        return budge; 
       })
       return newBudgets; 
     }
@@ -20,5 +20,5 @@ const budgetsSlice = createSlice({
 });
 
 export const selectBudgets = (state) => state.budgets;
-export { editBudget } = budgetsSlice.actions;
+export const { editBudget } = budgetsSlice.actions;
 export default budgetsSlice.reducer;
